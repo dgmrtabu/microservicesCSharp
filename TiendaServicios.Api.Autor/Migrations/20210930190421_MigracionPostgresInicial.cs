@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace TiendaServicios.Api.Autor.Migrations
 {
-    public partial class MigracionPostgressInicial : Migration
+    public partial class MigracionPostgresInicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,9 +14,10 @@ namespace TiendaServicios.Api.Autor.Migrations
                 {
                     AutorLibroId = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nombre = table.Column<int>(nullable: false),
-                    Apellido = table.Column<int>(nullable: false),
-                    FechaNacimiento = table.Column<DateTime>(nullable: true)
+                    Nombre = table.Column<string>(nullable: true),
+                    Apellido = table.Column<string>(nullable: true),
+                    FechaNacimiento = table.Column<DateTime>(nullable: true),
+                    AutorLibroGuid = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -29,8 +30,8 @@ namespace TiendaServicios.Api.Autor.Migrations
                 {
                     GradoAcademicoId = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Nombre = table.Column<int>(nullable: false),
-                    CentroAcademico = table.Column<int>(nullable: false),
+                    Nombre = table.Column<string>(nullable: true),
+                    CentroAcademico = table.Column<string>(nullable: true),
                     FechaGrado = table.Column<DateTime>(nullable: true),
                     AutorLibroId = table.Column<int>(nullable: false),
                     GradoAcademicoGuid = table.Column<string>(nullable: true)

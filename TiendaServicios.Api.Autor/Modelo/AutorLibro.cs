@@ -12,7 +12,7 @@ namespace TiendaServicios.Api.Autor.Modelo
         public string Apellido { get; set; }
         public DateTime? FechaNacimiento { get; set; }
 
-
         public ICollection<GradoAcademico> ListaGradoAcademico { get; set; }
+        public string AutorLibroGuid { get; set; }
     }
 }

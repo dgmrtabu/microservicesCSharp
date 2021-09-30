@@ -10,8 +10,8 @@ using TiendaServicios.Api.Autor.Persistencia;
 namespace TiendaServicios.Api.Autor.Migrations
 {
     [DbContext(typeof(ContextoAutor))]
-    [Migration("20210929195924_MigracionPostgressInicial")]
-    partial class MigracionPostgressInicial
+    [Migration("20210930190421_MigracionPostgresInicial")]
+    partial class MigracionPostgresInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,14 +28,17 @@ namespace TiendaServicios.Api.Autor.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("Apellido")
-                        .HasColumnType("integer");
+                    b.Property<string>("Apellido")
+                        .HasColumnType("text");
+
+                    b.Property<string>("AutorLibroGuid")
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("FechaNacimiento")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("Nombre")
-                        .HasColumnType("integer");
+                    b.Property<string>("Nombre")
+                        .HasColumnType("text");
 
                     b.HasKey("AutorLibroId");
 
@@ -52,8 +55,8 @@ namespace TiendaServicios.Api.Autor.Migrations
                     b.Property<int>("AutorLibroId")
                         .HasColumnType("integer");
 
-                    b.Property<int>("CentroAcademico")
-                        .HasColumnType("integer");
+                    b.Property<string>("CentroAcademico")
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("FechaGrado")
                         .HasColumnType("timestamp without time zone");
@@ -61,8 +64,8 @@ namespace TiendaServicios.Api.Autor.Migrations
                     b.Property<string>("GradoAcademicoGuid")
                         .HasColumnType("text");
 
-                    b.Property<int>("Nombre")
-                        .HasColumnType("integer");
+                    b.Property<string>("Nombre")
+                        .HasColumnType("text");
 
                     b.HasKey("GradoAcademicoId");
 

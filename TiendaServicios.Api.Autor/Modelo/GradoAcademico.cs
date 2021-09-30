@@ -9,12 +9,12 @@ namespace TiendaServicios.Api.Autor.Modelo
     {
 
         public int GradoAcademicoId { get; set; }
-        public int Nombre { get; set; }
-        public int CentroAcademico { get; set; }
+        public string Nombre { get; set; }
+        public string CentroAcademico { get; set; }
         public DateTime? FechaGrado { get; set; }
+        
         public int AutorLibroId { get; set; }
         public AutorLibro AutorLibro { get; set; }
-
         public string GradoAcademicoGuid { get; set; }
 
     }
